@@ -10,7 +10,7 @@
             Facile
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <?php for($i=1;$i <= 20;$i++) : ?>
+            <?php for($i=1;$i <= 19;$i++) : ?>
                 <a class="dropdown-item" href="../../1-facile/exo<?=$i?>/index.php">exo<?=$i?></a>
             <?php endfor; ?>
             </div>
