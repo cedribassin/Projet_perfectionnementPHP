@@ -22,6 +22,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="../../2-moyen/exo1/exo1.php">Table de multiplication</a>
                 <a class="dropdown-item" href="../../2-moyen/exo2/indexExo2.php">Fichier de fonctions et tableaux</a>
+                <a class="dropdown-item" href="../../2-moyen/exo3/indexExo3.php">Fichier de fonctions et tableaux associatifs</a>
             </div>
         </li>
         <li class="nav-item dropdown">
