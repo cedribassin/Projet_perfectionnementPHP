@@ -25,6 +25,8 @@
                 <a class="dropdown-item" href="../../2-moyen/exo3/indexExo3.php">Fichier de fonctions et tableaux associatifs</a>
                 <a class="dropdown-item" href="../../2-moyen/exo4/indexExo4.php">Création d'objet</a>
                 <a class="dropdown-item" href="../../2-moyen/exo5/indexExo5.php">Private && Getter</a>
+                <a class="dropdown-item" href="../../2-moyen/exo6/indexExo6.php">Attribut statique</a>
+                <a class="dropdown-item" href="../../2-moyen/exo7/indexExo7.php">Manipulation de plusieurs classes</a>
             </div>
         </li>
         <li class="nav-item dropdown">
