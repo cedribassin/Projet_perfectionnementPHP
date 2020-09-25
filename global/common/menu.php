@@ -51,9 +51,15 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="../../3-cas pratique/2-Catalogue/index.php">Catalogue de sport</a>
             </div>
-
         </li>
-
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Liste d'animaux
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../3-cas pratique/3-Liste animaux/index.php">Ma liste d'animaux</a>
+            </div>
+        </li>
     </ul>
     </div>
 </nav>
