@@ -2,19 +2,30 @@
 
 class Animal {
 
+    private $id;
     private $nom;
     private $age;
     private $sexe;
     private $type;
+    private $image = [];
 
-    public function __construct($nom, $age, $sexe, $type){
+    public static $mesAnimaux = [];
+
+    public function __construct($id, $nom, $age, $sexe, $type, $image){
+        $this->id = $id;
         $this->nom = $nom;
         $this->age = $age;
         $this->sexe = $sexe;
         $this->type = $type;
+        $this->image = $image;
+        //Permet d'insérer directement l'objet créé dans le tableau $mesAnimaux
+        self::$mesAnimaux[] = $this;
     }
     
     //Getters
+    public function getId(){
+        return $this->id;
+    }    
     public function getNom(){
         return $this->nom;
     }    
@@ -26,6 +37,9 @@ class Animal {
     }    
     public function getType(){
         return $this->type;
+    }    
+    public function getImage(){
+        return $this->image;
     }    
 
     //Setters
@@ -42,6 +56,7 @@ class Animal {
     $this->type = $type;
     }    
 
+    
 
 
 }

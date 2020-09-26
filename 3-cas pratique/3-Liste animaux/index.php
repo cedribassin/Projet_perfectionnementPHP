@@ -1,29 +1,31 @@
 <?php ob_start(); 
-require_once "pdo.class.php";
+require_once "Pdo.class.php";
+require_once "Animal.class.php";
+require_once "AnimalDAO.php";
+
 $titre = "Liste d'animaux";
 ?>
 <?php
 
-$test ="x";
+//On récupère l'ensemble des animaux dans la variable $animal
+$animaux = AnimalDAO::getAnimals();
+
+//On créer l'ensemble des animaux
+foreach($animaux as $animal){
+    //On récupère le type dans $type en utilisant la fonction getTypeAnimal()
+    $type = AnimalDAO::getTypeAnimal($animal['id_animal']);
+    $images = AnimalDAO::getImagesAnimal($animal['id_animal']);
+    //Pour le sexe il s'agit d'un booléen mais considéré comme un entier dans la BDD, d'ou le cast en int
+    new Animal($animal['id_animal'], $animal['nom'], (int)$animal['age'], (int)$animal['sexe'], $type, $images);
+}
+
+foreach (Animal::$mesAnimaux as $animal){
+    echo $animal->getId()."</br>";
+    echo $animal->getNom()."</br>";     
+    echo $animal->getType()."</br>";
+}
 
 ?>
-
-<!-- Pour l'affichage on utilise la balise table et la classe table de bootstrap -->
-<table class="table">
-    <?php for($j=0; $j < 10; $j++) : ?>
-        <!-- On réalise une condition ternaire pour avoir seulement la 1ère ligne en gras -->
-        <tr <?= ($j===0)?'class="font-weight-bold"':''?>>
-            <?php for($i=0; $i < 10; $i++) :?>
-                        <!-- pareil pour la 1ère colonne en gras -->
-                <td <?= ($i===0)?'class="font-weight-bold"':''?>>
-                    <!-- On affiche notre tableau -->
-                    <?= $test?>
-                </td>
-            <?php endfor;?>
-        </tr>
-    <?php endfor;?>
-
-</table>
 
 <?php
     $content = ob_get_clean();
