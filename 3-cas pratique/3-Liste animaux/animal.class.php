@@ -7,17 +7,17 @@ class Animal {
     private $age;
     private $sexe;
     private $type;
-    private $image = [];
+    private $images = [];
 
     public static $mesAnimaux = [];
 
-    public function __construct($id, $nom, $age, $sexe, $type, $image){
+    public function __construct($id, $nom, $age, $sexe, $type, $images){
         $this->id = $id;
         $this->nom = $nom;
         $this->age = $age;
         $this->sexe = $sexe;
         $this->type = $type;
-        $this->image = $image;
+        $this->images = $images;
         //Permet d'insérer directement l'objet créé dans le tableau $mesAnimaux
         self::$mesAnimaux[] = $this;
     }
@@ -38,8 +38,8 @@ class Animal {
     public function getType(){
         return $this->type;
     }    
-    public function getImage(){
-        return $this->image;
+    public function getImages(){
+        return $this->images;
     }    
 
     //Setters

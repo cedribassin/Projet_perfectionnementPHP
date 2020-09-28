@@ -22,9 +22,24 @@ class AnimalDAO{
         //La variable :idAnimal prendra la valeur $idAnimal (et on précise qu'il s'agit d'un entier)
         $stmt->bindValue(":idAnimal", $idAnimal, PDO::PARAM_INT);
         $stmt->execute();
+        //FETCH_ASSOC => on renvoie le tableau associatif du résultat de cette requête
         $typeAnimal = $stmt->fetch(PDO::FETCH_ASSOC);
         return $typeAnimal['typeAnimal'];
     }
+
+    //Fonction qui permet de récupérer les images d'un animal
+    public static function getImagesAnimal($idAnimal){
+        $pdo= monPDO::getPDO();
+        $req = "SELECT libelle, url_image FROM `image` i INNER JOIN imageappartient ia ON i.id_image = ia.id_image 
+        WHERE ia.id_animal= :idAnimal";
+        $stmt = $pdo->prepare($req);
+        //La variable :idAnimal prendra la valeur $idAnimal (et on précise qu'il s'agit d'un entier)
+        $stmt->bindValue(":idAnimal", $idAnimal, PDO::PARAM_INT);
+        $stmt->execute();
+        $imageAnimal = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $imageAnimal;
+    }
+    
 }
 
 
